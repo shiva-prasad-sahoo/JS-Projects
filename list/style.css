@@ -1,0 +1,11 @@
+#btn {
+  border-radius: 20px;
+  background-color: rgb(246, 243, 239);
+  color: black;
+  cursor: cell;
+  margin-left: 10px;
+}
+
+#btn:hover {
+  background-color: rgb(48, 48, 200);
+}

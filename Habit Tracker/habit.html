@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="habit.css" />
+  </head>
+  <body>
+    <h1>Track Your Habits</h1>
+
+    <div class="inputArea">
+      <h3 id="text">Enter the habit to track:</h3>
+
+      <input
+        type="text"
+        name="habit"
+        id="inputs"
+        placeholder="Enter the habit to track:"
+      />
+      <button type="button" id="btn">Add</button>
+    </div>
+
+    <div class="display">
+      <h3>Your habits</h3>
+      <ul id="mainlist"></ul>
+    </div>
+    <script src="habit.js"></script>
+  </body>
+</html>
