@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   canvas.width = window.innerWidth;
 
   ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, canvas.width, canvas.height); 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   //   ctx.strokeStyle = "red";
   //   ctx.strokeRect(50, 50, 200, 200);
@@ -18,11 +18,13 @@ window.addEventListener("load", () => {
   let isclicked = false;
   let crntcolour = "black";
   let crntsize = 5;
+  let bckcolor = "#ffffff";
 
   const colourdrop = document.getElementById("colour");
   const sizesslider = document.getElementById("size");
   const clearbtn = document.querySelector("#clear");
   const savebtn = document.querySelector("#save");
+  const bginput = document.getElementById("bgcolour");
 
   colourdrop.addEventListener("change", (e) => {
     crntcolour = e.target.value;
@@ -33,8 +35,7 @@ window.addEventListener("load", () => {
   });
 
   clearbtn.addEventListener("click", () => {
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    fillbackground(bckcolor);
   });
 
   savebtn.addEventListener("click", () => {
@@ -43,6 +44,16 @@ window.addEventListener("load", () => {
     link.download = "myDrawing.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
+  });
+
+  function fillbackground(color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+
+  bginput.addEventListener("input", (e) => {
+    bckcolor = e.target.value;
+    fillbackground(bckcolor);
   });
 
   function start(e) {
